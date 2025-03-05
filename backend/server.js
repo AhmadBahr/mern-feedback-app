@@ -4,7 +4,6 @@ import dotenv from "dotenv";
 import cors from "cors";
 import feedbackRoutes from "./routes/feedbackRoutes.js"; // Import feedback routes
 import adminRoutes from "./routes/adminRoutes.js"; // Import admin routes
-
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -28,10 +27,6 @@ mongoose.connect(process.env.MONGO_URI, {
     .then(() => console.log("✅ MongoDB Connected"))
     .catch(err => console.error("❌ MongoDB Connection Error:", err));
 
-// Start Server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
 // For ES Modules (use this instead of __dirname)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -44,3 +39,6 @@ if (process.env.NODE_ENV === "production") {
         res.sendFile(path.resolve(__dirname, "../frontend", "build", "index.html"));
     });
 }
+
+// 🚀 Export app for Vercel (removes the need for app.listen())
+export default app;
