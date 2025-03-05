@@ -40,5 +40,5 @@ if (process.env.NODE_ENV === "production") {
     });
 }
 
-// 🚀 Export app for Vercel (removes the need for app.listen())
+// 🚀 Export app for Vercel
 export default app;
