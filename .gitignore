@@ -1,0 +1,26 @@
+# Node modules (prevents unnecessary files from being committed)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment variables (sensitive credentials)
+.env
+
+# Logs
+logs
+*.log
+log/
+debug.log
+error.log
+
+# Build artifacts
+dist/
+build/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor-specific files
+.vscode/
+.idea/
